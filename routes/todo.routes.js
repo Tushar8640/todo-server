@@ -1,8 +1,14 @@
-const express = require("express")
-const { addTodoController } = require("../controllers/todo/addTodo")
+const express = require("express");
+const { addTodoController } = require("../controllers/todo/addTodo");
+const { deleteTodoController } = require("../controllers/todo/deleteTodo");
+const { getAllTodoController } = require("../controllers/todo/getAllTodo");
+const { editTodoController } = require("../controllers/todo/editTodo");
 
-const router= express.Router()
+const router = express.Router();
 
-router.post("/addtodo",addTodoController)
+router.post("/addtodo", addTodoController);
+router.delete("/deletetodo/:id", deleteTodoController);
+router.get("/alltodos", getAllTodoController);
+router.patch("/edittodo/:id", editTodoController);
 
-module.exports = router
+module.exports = router;

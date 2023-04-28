@@ -24,9 +24,11 @@ app.get("/", (req, res) => {
 
 //import routes
 const todoRoutes = require("./routes/todo.routes.js");
+const userRoutes = require("./routes/user.routes.js");
 
 // api routes
 app.use("/api/v1/todo", todoRoutes);
+app.use("/api/v1/user", userRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ------${port}------`);
