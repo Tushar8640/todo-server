@@ -1,18 +1,17 @@
-const { getUsersTodoServices } = require("../../services/todo.services");
+const { getAllCategoriesServices } = require("../../services/category.services");
 
-exports.getTodosByUserController = async (req, res) => {
+exports.getAllCategoriController = async (req, res) => {
   try {
-    const {email} = req?.params
-    const todos = await getUsersTodoServices(email);
-    if (todos) {
+    const categories = await getAllCategoriesServices();
+    if (categories) {
       res.status(200).json({
         status: "success",
-        todos: todos,
+        categories: categories,
       });
     } else {
       res.status(200).json({
         status: "failed",
-        message: "Unable to get todos ",
+        message: "Unable to get categories ",
       });
     }
   } catch (error) {
