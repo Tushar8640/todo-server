@@ -31,7 +31,19 @@ exports.getAllTodoServices = async () => {
 // get all todo
 exports.getTodoById = async (id) => {
   try {
-    const todo = await Todo.findById({_id:id})
+    const todo = await Todo.findById({ _id: id });
+    return todo;
+  } catch (error) {
+    console.log(error);
+  }
+};
+// get all todo
+exports.getUsersTodoServices = async (email) => {
+  try {
+    console.log(email);
+    const todo = await Todo.find({
+      "user.email": email,
+    });
     return todo;
   } catch (error) {
     console.log(error);
