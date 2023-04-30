@@ -29,11 +29,8 @@ This is a web application designed for managing daily task using the MERN (Mongo
 
 To install this project on your local machine, follow these steps:
 
-####  Frontend
-```bash
-git clone https://github.com/israt-emu/Library-management-frontend.git
+####  Backend
 
-```
     
 ## Run Locally
 
