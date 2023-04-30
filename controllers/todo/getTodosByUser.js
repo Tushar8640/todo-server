@@ -2,8 +2,12 @@ const { getUsersTodoServices } = require("../../services/todo.services");
 
 exports.getTodosByUserController = async (req, res) => {
   try {
-    const {email} = req?.params
-    const todos = await getUsersTodoServices(email);
+    const { email } = req?.params;
+    console.log(req?.query);
+    const { title, category } = req.query;
+
+    console.log(category);
+    const todos = await getUsersTodoServices(email, title, category);
     if (todos) {
       res.status(200).json({
         status: "success",

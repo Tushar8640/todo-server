@@ -19,9 +19,15 @@ const todoSchema = mongoose.Schema(
       {
         id: {
           type: Number,
+          required: true,
         },
         name: {
           type: String,
+          required: true,
+        },
+        color: {
+          type: String,
+          required: true,
         },
       },
     ],

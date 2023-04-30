@@ -38,12 +38,26 @@ exports.getTodoById = async (id) => {
   }
 };
 // get all todo
-exports.getUsersTodoServices = async (email) => {
+exports.getUsersTodoServices = async (email, titles, categories) => {
   try {
-    console.log(email);
-    const todo = await Todo.find({
-      "user.email": email,
-    });
+    console.log(email, titles, categories);
+    const filter = {};
+
+    // if (email) {
+    //   filter["user.email"] = email;
+    // }
+
+    if (categories) {
+      const category = categories.split(",");
+console.log(category);
+      filter.category = { $elemMatch: { name: { $in: category } } };
+    }
+
+    if (titles) {
+      const title = new RegExp(titles, "i");
+      filter.title = title;
+    }
+    const todo = await Todo.find(filter).sort({ createdAt: -1 });
     return todo;
   } catch (error) {
     console.log(error);
