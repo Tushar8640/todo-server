@@ -43,9 +43,9 @@ exports.getUsersTodoServices = async (email, titles, categories) => {
     console.log(email, titles, categories);
     const filter = {};
 
-    // if (email) {
-    //   filter["user.email"] = email;
-    // }
+    if (email) {
+      filter["user.email"] = email;
+    }
 
     if (categories) {
       const category = categories.split(",");
