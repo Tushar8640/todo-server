@@ -4,7 +4,6 @@ exports.userSignUp = async (req, res) => {
   try {
     const data = req.body;
     // check user is exist
-    console.log(req.body);
     const checkUser = await getUserByEmail(data?.email);
     if (checkUser) {
       return res.status(200).json({
