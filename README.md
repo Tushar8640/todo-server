@@ -19,6 +19,55 @@ This is a web application designed for managing daily task using the MERN (Mongo
 **Server:** Node, Express, Mongoose, JWT
 
 
+
+## Login Credentials
+- email: admin@gmail.com 
+- password: 1234
+
+
+## Installation
+
+To install this project on your local machine, follow these steps:
+
+####  Frontend
+```bash
+git clone https://github.com/israt-emu/Library-management-frontend.git
+
+```
+    
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/Tushar8640/todo-server.git
+```
+
+Go to the project directory
+
+```bash
+  cd todo-server
+```
+
+add env file
+
+```bash
+  DATABASE_LOCAL= "Your db uri"
+  JWT_KEY= "Your jwt key"
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
 ## Authors
 
 -  [@Tusar Imran](https://www.github.com/Tushar8640)
